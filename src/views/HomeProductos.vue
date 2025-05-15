@@ -32,3 +32,26 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.home {
+  padding: 1rem;
+}
+header {
+  background-color: #66bb6a;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+.productos {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.producto-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+</style>
