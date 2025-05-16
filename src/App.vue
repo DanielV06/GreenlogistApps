@@ -11,21 +11,20 @@ export default {
 </script>
 
 <style>
-
+/* Estilos globales básicos */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: sans-serif;
   margin: 0;
-  background-color: #f4f6f8; /* Un color de fondo neutro y claro */
+  background-color: #f0f4f0; /* Un verde claro suave  */
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Alinea al inicio para formularios largos */
+  align-items: center;
   min-height: 100vh;
-  padding-top: 40px; /* Espacio arriba */
-  box-sizing: border-box;
 }
 
 #app-container {
   width: 100%;
+  max-width: 1200px; 
 }
 
 /* Estilos para los formularios */
@@ -33,17 +32,16 @@ body {
   background-color: white;
   padding: 30px 40px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 420px;
-  margin: 0 auto; /* Centrar horizontalmente */
+  max-width: 400px; /* Ancho típico para formularios de login/registro */
+  margin: 20px auto; /* Centrar el contenedor del formulario */
   text-align: center;
 }
 
 .auth-form-container h1 {
-  color: #2E7D32; /* Verde oscuro para títulos */
-  margin-bottom: 30px; /* Más espacio */
-  font-size: 24px; /* Tamaño de fuente del título */
+  color: #2E7D32; /* Un verde oscuro para los títulos */
+  margin-bottom: 25px;
 }
 
 .form-group {
@@ -53,60 +51,45 @@ body {
 
 .form-group label {
   display: block;
-  margin-bottom: 8px; /* Un poco más de espacio */
-  color: #333; /* Color de texto más oscuro para mejor contraste */
-  font-weight: 600; /* Un poco más de peso */
-  font-size: 14px;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
 }
 
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="password"] {
   width: 100%;
-  padding: 12px 15px; /* Un poco más de padding */
-  border: 1px solid #d1d5db; /* Borde más sutil */
-  border-radius: 6px; /* Bordes más redondeados */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   box-sizing: border-box;
-  font-size: 16px;
 }
-
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
-.form-group input[type="password"]:focus {
-  border-color: #4CAF50; /* Verde al enfocar */
-  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2); /* Sombra sutil al enfocar */
-  outline: none;
-}
-
 
 .btn-submit {
-  background-color: #4CAF50; /* Verde principal */
+  background-color: #4CAF50; /* Verde de los botones principales */
   color: white;
   padding: 12px 20px;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: bold;
   width: 100%;
-  transition: background-color 0.2s ease-in-out;
-  margin-top: 10px; /* Espacio antes del botón */
+  transition: background-color 0.3s ease;
 }
 
 .btn-submit:hover {
-  background-color: #388E3C; /* Verde más oscuro al pasar el mouse */
+  background-color: #388E3C; /* Un verde más oscuro al pasar el mouse */
 }
 
 .auth-link {
-  margin-top: 25px; /* Más espacio */
+  margin-top: 20px;
   font-size: 14px;
-  color: #555;
 }
 
 .auth-link a {
-  color: #2E7D32; /* Verde para enlaces */
+  color: #2E7D32;
   text-decoration: none;
-  font-weight: 600;
 }
 
 .auth-link a:hover {
@@ -114,13 +97,9 @@ body {
 }
 
 .error-message {
-  color: #D32F2F; /* Rojo para errores */
-  background-color: #FFEBEE; /* Fondo rojo claro para errores */
-  border: 1px solid #D32F2F;
-  padding: 10px;
-  border-radius: 4px;
+  color: red;
   font-size: 0.9em;
-  margin-bottom: 15px; /* Espacio debajo del mensaje de error */
+  margin-top: 5px;
   text-align: left;
 }
 </style>
