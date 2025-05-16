@@ -1,26 +1,22 @@
 <template>
-  <div class="container">
-    <h1>ESTADÍSTICAS</h1>
-
-    <div class="content">
+  <div class="stats-container">
+    <h1 class="stats-title">ESTADÍSTICAS</h1>
+    
+    <div class="stats-content">
       <div class="stats-grid">
         <div class="stat-card">
           <h3>Ventas Totales</h3>
           <p># Ventas</p>
+          <p>Total ganado: s/.#</p>
         </div>
         <div class="stat-card">
           <h3>Productos Vendidos</h3>
           <p># kg en Productos</p>
         </div>
-      </div>
-
-      <div class="total-earned">
-        <p>Total ganado: S/. #</p>
-      </div>
-
-      <div class="transport">
-        <h3>Transportes Solicitados</h3>
-        <p># Pedidos</p>
+        <div class="stat-card">
+          <h3>Transportes Solicitados</h3>
+          <p># de pedidos</p>
+        </div>
       </div>
 
       <div class="buttons">
@@ -42,6 +38,12 @@ export default {
 </script>
 
 <style scoped>
+.stats-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center; 
+}
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -63,3 +65,4 @@ export default {
   margin-bottom: 20px;
 }
 </style>
+
