@@ -6,8 +6,8 @@
         <li><router-link to="/dashboard">Inicio</router-link></li>
         <li><router-link to="/RegistroProducto">Registrar Producto</router-link></li>
         <li><router-link to="/dashboard/solicitar-transporte">Solicitar Transporte</router-link></li>
-        <li><router-link to="/dashboard/estadisticas">Panel de Estadísticas</router-link></li>
-        <li><router-link to="/dashboard/perfil">Perfil y Visibilidad Pública</router-link></li>
+        <li><router-link to="/panel-estadisticas">Panel de Estadísticas</router-link></li>
+        <li><router-link to="/perfil">Perfil y Visibilidad Pública</router-link></li>
       </ul>
     </aside>
 
