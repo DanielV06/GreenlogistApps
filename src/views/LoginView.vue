@@ -19,3 +19,37 @@
   </div>
 </template>
 
+<script setup>
+import { ref } from 'vue';
+import { useRouter }
+  from 'vue-router';
+
+const email = ref('');
+const password = ref('');
+const errorMessage = ref('');
+const router = useRouter();
+
+const handleLogin = () => {
+  errorMessage.value = ''; // Reset error message
+
+  if (!email.value || !password.value) {
+    errorMessage.value = 'Correo y contraseña son obligatorios.';
+    return;
+  }
+
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+  const user = users.find(
+      (u) => u.email === email.value && u.password === password.value // SIMULACIÓN
+  );
+
+  if (user) {
+    // Simular sesión guardando el usuario (o un token) en localStorage
+    localStorage.setItem('currentUser', JSON.stringify(user));
+    alert('¡Inicio de sesión exitoso!');
+    router.push('/dashboard'); // Redirigir al dashboard o panel
+  } else {
+    errorMessage.value = 'Correo o contraseña incorrectos.';
+  }
+};
+</script>
+
