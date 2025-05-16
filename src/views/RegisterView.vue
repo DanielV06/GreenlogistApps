@@ -27,3 +27,55 @@
   </div>
 </template>
 
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const fullName = ref('');
+const email = ref('');
+const password = ref('');
+const confirmPassword = ref('');
+const errorMessage = ref('');
+
+const router = useRouter();
+
+const handleRegister = () => {
+  errorMessage.value = ''; // Reset error message
+
+  // Validaciones básicas
+  if (!fullName.value || !email.value || !password.value || !confirmPassword.value) {
+    errorMessage.value = 'Todos los campos son obligatorios.';
+    return;
+  }
+  if (password.value !== confirmPassword.value) {
+    errorMessage.value = 'Las contraseñas no coinciden.';
+    return;
+  }
+  // Validación de email 
+  if (!/\S+@\S+\.\S+/.test(email.value)) {
+    errorMessage.value = 'El formato del correo electrónico no es válido.';
+    return;
+  }
+
+  // Simulación de base de datos con localStorage
+  let users = JSON.parse(localStorage.getItem('users')) || [];
+
+  if (users.find(user => user.email === email.value)) {
+    errorMessage.value = 'Este correo electrónico ya está registrado.';
+    return;
+  }
+  
+  // Para esta simulación, la guardamos tal cual para el login.
+  users.push({
+    fullName: fullName.value,
+    email: email.value,
+    password: password.value, // SIMULACIÓN
+  });
+
+  localStorage.setItem('users', JSON.stringify(users));
+
+  alert('¡Registro exitoso! Ahora puedes iniciar sesión.');
+  router.push('/login'); // Redirigir a la página de inicio de sesión
+};
+</script>
+
