@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script setup> // Puedes mantener lang="ts" si así está configurado tu proyecto, o quitarlo si es solo JS
+<script setup> 
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
