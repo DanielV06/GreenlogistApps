@@ -1,8 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import LoginView from '../views/LoginView.vue';
-import RegisterView from '../views/RegisterView.vue';
-import DashboardView from '../views/DashboardView.vue';
-
+import LoginView from '@LoginView.vue';
+import RegisterView from '@RegisterView.vue';
+import DashboardView from '@DashboardView.vue';
+import Dashboard from '@/views/ProductoresDashboard.vue';
+import RegistroProducto from '@/views/RegistroProducto.vue';
+import ProducerView from '@/views/perfil.vue'
+import estadisticas from "@/views/estadisticas.vue";
+import perfil from "@/views/perfil.vue";
 const routes = [
   {
     path: '/',
@@ -24,13 +28,31 @@ const routes = [
     component: DashboardView,
     meta: { requiresAuth: true }, // Marcaremos esta ruta como que requiere autenticación
   },
-  // Posible ruta para el panel del productor 
-  // {
-  //   path: '/productor/panel',
-  //   name: 'ProductorPanel',
-  //   component: () => import('../views/ProductorPanelView.vue'), // Ejemplo
-  //   meta: { requiresAuth: true }
-  // }
+  {
+    path: '/registrar-producto',
+    name: 'RegistroProducto',
+    component: RegistroProducto
+  },
+  { path: '/producer',
+    name: 'Producer',
+    component: ProducerView
+  },
+  {
+    path: '/panel-estadisticas',
+    name: 'estadisticas',
+    component: estadisticas,
+    meta: {
+      title: 'Estadísticas'
+    }
+  },
+  {
+    path: '/perfil',
+    name: 'perfil',
+    component: perfil,
+    meta: {
+      title: 'Perfil del Productor'
+    }
+  },
 ];
 
 const router = createRouter({
